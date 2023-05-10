@@ -9,7 +9,7 @@ export class GithubStrategy extends PassportStrategy(Strategy, 'github') {
     super({
       clientID: process.env.CLIENT_ID,
       clientSecret: process.env.CLIENT_SECRET,
-      callbackURL: 'http://localhost:3000/auth/github/callback',
+      callbackURL: 'https://true-foundry-two.vercel.app/auth/github/callback',
       scope: ['user:email', 'public_repo']
     });
   }

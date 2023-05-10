@@ -14,7 +14,7 @@ export class AppController {
   constructor(private readonly userService: UsersService) {}
 
   @Get()
-  @Render('index')
+  @Render('layouts/main')
   index() {
     return { title: "True Foundry's GitHub Authorizer" };
   }
@@ -27,7 +27,7 @@ export class AppController {
 
   @Get('/auth/github/callback')
   @UseGuards(AuthGuard('github'))
-  @Render('index')
+  @Render('layouts/main')
   async githubAuthCallback(@Req() req: CustomRequest) {
     const {user} = req
     const users = await this.userService.getUsers();
@@ -65,7 +65,7 @@ export class AppController {
       console.error(`Error creating repository: ${err.message}`);
     }
 
-    return { title: "True Foundry's GitHub Authorizer" , message: 'The Auth worked!!' };
+    return { title: "True Foundry's GitHub Authorizer" , message: 'The Auth worked!!!' };
   }
 
 }
