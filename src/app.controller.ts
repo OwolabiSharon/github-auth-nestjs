@@ -63,7 +63,6 @@ export class AppController {
       });
     } catch (err) {
       console.error(`Error creating repository: ${err.message}`);
-      console.error(`Status code: ${err.status}`);
     }
 
     return { title: "True Foundry's GitHub Authorizer" , message: 'The Auth worked!!' };
