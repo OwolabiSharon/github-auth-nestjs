@@ -14,7 +14,6 @@ export class AppController {
   constructor(private readonly userService: UsersService) {}
 
   @Get()
-  @Render('index')
   index() {
     return { title: "True Foundry's GitHub Authorizer" };
   }
