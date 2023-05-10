@@ -6,6 +6,7 @@ import { UsersService } from './services/users.service';
 import { GithubStrategy } from './services/githubStrategy';
 import { UserDataEntity } from './models/user.entity';
 import { PassportModule } from '@nestjs/passport';
+import { join } from 'path';
 
 @Module({
   imports: [
@@ -13,7 +14,7 @@ import { PassportModule } from '@nestjs/passport';
     ConfigModule.forRoot({ isGlobal: true }),
     TypeOrmModule.forRoot({
       type: 'sqlite',
-      database: process.env.SQLITE_DATABASE,
+      database: join('/tmp', 'database.db'),
       autoLoadEntities: true,
       synchronize: true,
     }),
