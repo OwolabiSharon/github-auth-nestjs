@@ -12,6 +12,7 @@ export class UsersService {
         private readonly userDataRepo: Repository<UserDataEntity> 
         ) {}    
         
+        // add user data into the database
         async createUser( user: userData ){
             try {
                 return await this.userDataRepo.save(user);
@@ -21,7 +22,7 @@ export class UsersService {
             }
             
         }
-    
+        // Get all users from the database
         async getUsers( ){
             try {
                 return await this.userDataRepo.find();
